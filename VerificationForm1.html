@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(206, 209, 214);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            /*align-content: stretch;*/
+            border: 50px solid block;
+            height: 450px;
+
+        }
+
+        .box { 
+           flex: 1 0 100px;
+            flex-direction: row;
+            width: 100%;
+            height: 202%;
+        }
+
+        .inner-box {
+            display: flex;
+        }
+
+        .inner-box1 {
+            padding-top: 10px;
+            background-color: rgb(236, 230, 222);
+            padding-left: 10px;
+            flex-direction: column;
+            /*  flex: grow 1;*/
+            flex: 1;
+            height: 590px;
+
+        }
+
+        .inner-box2 {
+            padding-top: 10px;
+            background-color: rgb(200, 224, 224);
+            padding-left: 30px;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .bottom-box {
+            background-color: rgb(228, 228, 28);
+            display: flex;
+            flex: 1 1 auto;
+            margin-top: 10px;
+        }
+
+        .form-wrap {
+            align-content: center;
+        }
+
+        .form-wrap .form-group label {
+
+            display: block;
+            margin-top: 20px;
+            margin-left: 15px;
+            color: darkslategray;
+        }
+
+        .form-group input {
+            height: 25px;
+            width: 180px;
+        }
+
+
+        .form-wrap button {
+            display: block;
+            background-color: rgb(189, 192, 187);
+            height: 35px;
+            width: 160px;
+            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
+            word-wrap: normal;
+            cursor: pointer;
+        }
+
+        .side-dl dd {
+            color: rgba(143, 8, 134, 0.678);
+            font-family: cursive;
+            font-weight: bold;
+        }
+
+        table {
+
+           
+            border: solid 1px #DDEEEE;
+            border-collapse: collapse;
+            border-spacing: 0;
+            font: normal 13px Arial, sans-serif;
+            width: 104%;
+        }
+
+        thead th {
+            background-color: #DDEFEF;
+            border: solid 1px #000c0c;
+            color: #336B6B;
+            padding: 10px;
+            text-align: center;
+            text-shadow: 1px 1px 1px #fff;
+        }
+
+        tbody td {
+
+            border: solid 1px #000c0c;
+            padding: 5px;
+        }
+        td button{
+            width:150px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="inner-box">
+                <div class="inner-box1">
+                    <div class="form-wrap">
+                        <form>
+                            <h>
+                                <center><u>VERIFICATION FORM </u></center>
+                            </h>
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" name="firstName" id="fname" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" name="lastName" id="lname" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">SSN</label>
+                                <input type="number" name="password" id="pswd" maxlength="9" size="9" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" name="address" id="adrs" disabled />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" name="email" id="city" disabled />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" name="state" id="state" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="number" name="phone" id="phone" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" disabled />
+                            </div>
+
+                            <button type="button" class="btn" onclick="divideBy();mydlfunction();"><b>
+                                    <center>Verify</center>
+                                </b></button>
+                            <!--- //<p>The Result is : 
+                               // <span id = "result"></span>
+                               </p> -->
+                        </form>
+                    </div>
+                </div>
+                <div class="inner-box2">
+
+                    <p>
+                        <h>
+                            <center><u>CANDIDATE DESCRIPTION FORM</u></center>
+                        </h>
+                        <br>
+                    <dl id="sidedl" class="side-dl">
+                        <dt>First Name </dt>
+                        <dd id="fl"> </dd>
+                        <br>
+                        <dt>Last Name </dt>
+                        <dd id="ll"></dd>
+                        <br>
+                        <dt>SSN </dt>
+                        <dd id="sl"></dd>
+                        <br>
+                        <dt>Address </dt>
+                        <dd id="al"></dd>
+                        <br>
+                        <dt>City</dt>
+                        <dd id="cl"></dd>
+                        <br>
+                        <dt>State </dt>
+                        <dd id="stl"></dd>
+                        <br>
+                        <dt>Phone</dt>
+                        <dd id="pl"></dd>
+                        <br>
+                        <dt>Email </dt>
+                        <dd id="el"></dd>
+                        <br>
+                        <dt>ID Verification Status </dt>
+                        <dd id="vl">
+                            <p><b><span id="result"></span></b></p>
+                        </dd>
+                    </dl>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="inner-box">
+            <div class="bottom-box" id="bottom-box">
+
+                <form class="tble1">
+                    <p id="info"></p>
+                    <table id="table1">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>SSN</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="1">
+                                <td>
+                                    <input class="row-data" type="text" name="fname" id="fname1" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="text" name="lname" id="lname" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="text" id="SSN" name="ssn" maxlength="9" size="9"
+                                        required />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="textarea" name="address" id="address" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="Text" name="City" id="city" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="text" name="State" id="state" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="tel" name="phone" maxlength="10" id="phone" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="email" name="email" id="email" />
+                                </td>
+                                <td>
+                                    <button type="button" name="populate" id="populate"
+                                        onclick="myfunction(this);">Populate</button>
+                                </td>
+                            </tr>
+                            <tr id="2">
+                                <td>
+                                    <input class="row-data" type="text" name="fname1" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="text" name="lname" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="text" id="SSN" name="ssn" maxlength="9" size="9"
+                                        required />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="textarea" name="address" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="Text" name="City" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="text" name="State" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="number" maxlength="10" name="Phone" />
+                                </td>
+                                <td>
+                                    <input class="row-data" type="email" name="email" />
+                                </td>
+                                <td>
+                                    <button class="row-data" type="button" name="populate" onclick="myfunction(this);">
+                                        Populate</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+
+        <script>
+            function intoarray() {
+                var sTableName = document.getElementById("table1");
+                for (var i = 0; i < (sTableName.children[1].childElementCount) - 1; i++) {
+                    var tableRow = sTableName.children[1].children[i];
+                    for (var j = 0; j < (tableRow.childElementCount) - 1; j++) {
+                        var tableCell = tableRow.children[j];
+                        console.log('Cell [' + i + ',' + j + '] value: ' + tableCell.children[0].value);
+                        alert('Cell [' + i + ',' + j + '] value: ' + tableCell.children[0].value);
+                    }
+                }
+            }
+
+            function myfunction(a) {
+                alert("Current row index is" + a.parentNode.parentNode.rowIndex);
+                var rowIndex = a.parentNode.parentNode.rowIndex;
+                var table = document.getElementById('table1');
+                table.rows[rowIndex].onclick = function () {
+                    document.getElementById("fname").value = this.cells[0].children[0].value;
+                    document.getElementById("lname").value = this.cells[1].children[0].value;
+                    document.getElementById("pswd").value = this.cells[2].children[0].value;
+                    document.getElementById("adrs").value = this.cells[3].children[0].value;
+                    document.getElementById("city").value = this.cells[4].children[0].value;
+                    document.getElementById("state").value = this.cells[5].children[0].value;
+                    document.getElementById("phone").value = this.cells[6].children[0].value;
+                    document.getElementById("email").value = this.cells[7].children[0].value;
+
+                }
+            }
+
+            function divideBy() {
+                var num1 = document.getElementById("pswd").value;
+                var pstr = "PASS";//
+                var fstr = "FAIL";
+                var pg = pstr.fontcolor("green");
+                var fr = fstr.fontcolor("red");
+                var lastdigit = (num1 + '').slice(-1);
+                //alert('Is the  last digit even or odd ?' + lastDigit % 2);
+                if (lastdigit % 2 != 0) {
+                    document.getElementById("result").innerHTML = pg ;
+                }
+                else if ((lastdigit == "" )||(num1 % 2 == 0)) {
+                    document.getElementById("result").innerHTML = fr;
+                }
+            }
+
+
+            function mydlfunction() {
+                var flt = document.getElementById("fname").value;
+                // alert('fetched First name from form is '+ flt);
+                // document.getElementById("fl").value = flt;
+                document.getElementById("fl").innerHTML = flt;
+                // var flchk =  document.getElementById("fl").value
+                //  alert('fetched First name from dl is ' + flt);
+                var llt = document.getElementById("lname").value;
+                document.getElementById("ll").innerHTML = llt
+                //alert('fetched last name from dl-ll is ' + llt);
+                var st = document.getElementById("pswd").value;
+                document.getElementById("sl").innerHTML = st;
+                // alert('fetched ssn from dl-sl is ' + st);
+                var at = document.getElementById("adrs").value;
+                document.getElementById("al").innerHTML = at;
+                // alert('fetched address from dl-al is ' + at);
+                var ct = document.getElementById("city").value;
+                document.getElementById("cl").innerHTML = ct;
+                // alert('fetched city from dl-cl is ' + ct);
+                var stt = document.getElementById("state").value;
+                document.getElementById("stl").innerHTML = stt;
+                // alert('fetched state from dl-sl is ' + stt);
+                var pt = document.getElementById("phone").value;
+                document.getElementById("pl").innerHTML = pt;
+                // alert('fetched phone from dl-pl is ' + pt);
+                var et = document.getElementById("email").value;
+                document.getElementById("el").innerHTML = et;
+            }
+
+        </script>
+</body>
+</html>
